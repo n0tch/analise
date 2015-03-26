@@ -1,0 +1,10 @@
+<h2>Selecione o arquivo: </h2>
+
+<%= form_tag({action: :create}, multipart: true) do %>
+  <%= file_field_tag :doc, multiple: true %>
+
+  <%= submit_tag :enviar %>
+<% end %>
+<p>
+	<%= notice %>
+</p>
