@@ -2,6 +2,7 @@
 
 <%= form_tag({action: :create}, multipart: true) do %>
   <%= file_field_tag :doc, multiple: true %>
+  <%# multiple: true permite o envio de multiplos arquivos %>
 
   <%= submit_tag :enviar %>
 <% end %>
