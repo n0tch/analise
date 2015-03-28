@@ -6,24 +6,31 @@ class AnalysisController < ApplicationController
 	def create
 		@arquivo = params[:doc]
 		
-		@tipo = File.extname(@arquivo.original_filename)
+		# @tipo = File.extname(@arquivo.original_filename)
 		# File.exxtname extrai a extençao do arquivo.
 
-		if @tipo == '.exe'
+		if File.extname(@arquivo.original_filename) == '.exe'
 			flash[:notice] = "Impossivel Upar Arquivos Executaveis"
 		else
-			
 			@texto = []
+			# File.open(@arquivo.to_s, "r").map{|file| @texto << file }
+			IO.foreach("/home/gustavo/web-app/analise/teste.txt"){|x| @texto << x}
 
-			File.open("/home/gustavo/web-app/analise/README.rdoc", "r").each do |file|
-						# ^ arquivo de teste que se encontra em disco.
-			    @texto << file
+			@array = @texto.to_s.split(" ")
+			# cria um array com uma posicao diferente para cada palavra
+
+			@outro = []
+			
+			@array.each do |f|
+				# @outro << f.gsub(/[\\n]/, '')
+				@outro << f.gsub(/\\n/,"")
+				# metodo strip retira os '\n' da string
+				# metodo gsub retira os caracteres que sao passados como parametro
 			end
-
-			flash[:notice] = "Texto: #{@texto.to_s.split}"
+			
+			flash[:notice] = @outro
 			# metodo split coloca cada pakavra em uma posiçao diferente em um array
 		end
-
 		redirect_to root_path
 	end
 end
