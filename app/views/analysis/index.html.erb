@@ -1,11 +1,11 @@
 <h2>Selecione o arquivo: </h2>
+<p>
+	<%= notice %>
+</p>
 
-<%= form_tag({action: :create}, multipart: true) do %>
-  <%= file_field_tag :doc, multiple: true %>
+<%= form_tag({action: :show}, multipart: true) do %>
+  <%= file_field_tag :doc %> <!-- , multiple: tru	e -->
   <%# multiple: true permite o envio de multiplos arquivos %>
 
   <%= submit_tag :enviar %>
 <% end %>
-<p>
-	<%= notice %>
-</p>

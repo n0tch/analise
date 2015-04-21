@@ -1,47 +1,51 @@
 class AnalysisController < ApplicationController
-	def index
-		
+	$root = Dir.pwd + "/files/"
+	def index		
 	end
 
-	def create
-		@arquivo = params[:doc]
-		
-		# @tipo = File.extname(@arquivo.original_filename)
-		
-
-		if File.extname(@arquivo.original_filename) == '.exe'
-			# File.extname extrai a extençao do arquivo.
-			flash[:notice] = "Impossivel Upar Arquivos Executaveis"
+	def show
+		arquivo = params[:doc]
+		if File.extname(arquivo.original_filename) == '.exe'
+			flash[:notice] = "Impossivel Upar Arquivos Executaveis!"
+			redirect_to root_path
 		else
-			@texto = []
-			# File.open(@arquivo.to_s, "r").map{|file| @texto << file }
-			IO.foreach(Dir.pwd + "/Gemfile"){|x| @texto << x}
+			save(arquivo)
+			texto = []
+			IO.foreach( $root + arquivo.original_filename){|x| texto << x}
+			array = texto.to_s.split(" ")#cria um array a cada espaco encontrado
+			outro = [] # GABIARRA!
+			array.each{|f| outro << f.gsub(/\\n/,"").delete("\"").delete(",").delete(".").delete("!").delete("[").delete("]") } #retira a ma formatacao do texto
+			outro = outro.join(" ")
+			palavraValor = outro.split.inject(Hash.new(0)) { |h,v| h[v] += 1; h } #Conta as palavras e coloca em um hash
 
-			@array = @texto.to_s.split(" ")
-			# cria um array com uma posicao diferente para cada palavra
+			#Ordena pela maior quantidade
+			palavraValor = palavraValor.sort_by{|word, vzs| vzs}
+			palavraValor.reverse!
 
-			@outro = []
-			
-			@array.each do |f|
-				# @outro << f.gsub(/[\\n]/, '')
-				# f = f.gsub(/\\n/,"")
-				# f = f.delete "\""
-				@outro << f.gsub(/\\n/,"").delete("\"")
-				# metodo strip retira os '\n' da string
-				# metodo gsub retira os caracteres que sao passados como parametro
-			end
-			
-			@resultado = []
-
-			frequencies = Hash.new(0)
-			@outro.each { |word| frequencies[word] += 1 }
-			frequencies = frequencies.sort_by {|a, b| b }
-			frequencies.reverse!
-			frequencies.each { |word, frequency| @resultado << word + " - " + frequency.to_s }
-
-			# flash[:notice] = @resultado
-			# metodo split coloca cada pakavra em uma posiçao diferente em um array
+			@resultado = retira_palavras(palavraValor)
+			remove_arquivo(arquivo)
 		end
-		# redirect_to root_path
+	end
+
+	private 
+
+	def retira_palavras(hash)
+		result = {}
+		hash.each do |word, value|
+			next if word == ','
+			next if word == ''
+			result[word] = value
+		end
+		result
+	end
+
+	def save(arquivo)
+		File.open(Rails.root.join($root, arquivo.original_filename), 'wb') do |file|
+      		file.write(arquivo.read)
+    	end
+	end
+
+	def remove_arquivo(arquivo)
+  		FileUtils.rm($root + arquivo.original_filename)
 	end
 end
