@@ -1,5 +1,7 @@
 class AnalysisController < ApplicationController
+	
 	$root = Dir.pwd + "/files/"
+
 	def index		
 	end
 
@@ -9,10 +11,9 @@ class AnalysisController < ApplicationController
 			flash[:notice] = "Impossivel Upar Arquivos Executaveis!"
 			redirect_to root_path
 		else
-			save(arquivo)
+			save(arquivo)#função para salvar em disco
 			texto = []
 			IO.foreach( $root + arquivo.original_filename){|x| texto << x}
-			array = texto.to_s.split(" ")#cria um array a cada espaco encontrado
 			outro = [] # GABIARRA!
 			array.each{|f| outro << f.gsub(/\\n/,"").delete("\"").delete(",").delete(".").delete("!").delete("[").delete("]") } #retira a ma formatacao do texto
 			outro = outro.join(" ")
@@ -25,6 +26,13 @@ class AnalysisController < ApplicationController
 			@resultado = retira_palavras(palavraValor)
 			remove_arquivo(arquivo)
 		end
+	end
+
+	def show_array
+		arquivos = [:doc]
+		
+		@qnt_arquivos = arquivos.count
+		redirect_to 'root_path'
 	end
 
 	private 
@@ -48,4 +56,8 @@ class AnalysisController < ApplicationController
 	def remove_arquivo(arquivo)
   		FileUtils.rm($root + arquivo.original_filename)
 	end
+
+	def analysis_params
+      params.require(:keyword).permit(:key, :language, :video_id)
+    end
 end

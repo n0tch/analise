@@ -4,8 +4,11 @@
 </p>
 
 <%= form_tag({action: :show}, multipart: true) do %>
-  <%= file_field_tag :doc %> <!-- , multiple: tru	e -->
+  <%= file_field_tag :doc %> <!-- , multiple: true -->
   <%# multiple: true permite o envio de multiplos arquivos %>
 
   <%= submit_tag :enviar %>
 <% end %>
+
+
+<%= link_to 'Index2', analysis_show_array_path%>

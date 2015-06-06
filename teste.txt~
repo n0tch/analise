@@ -1,6 +1,0 @@
-:size - A string specifying the dimensions (columns by rows) of the textarea (e.g., “25x10”).
-:rows - Specify the number of rows in the\ textarea
-:cols - Specify the number of columns in the textarea
-:disabled - If set to true, the user will not be able to use this input.
-:escape - By default, the contents of the text input are HTML escaped. If you need unescaped contents, set this to false.
-Any other key creates standard HTML attributes for the tag.
