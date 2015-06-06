@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Idiomas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Flgstatus</th>
+      <th>Inseridopor</th>
+      <th>Datadeinsercao</th>
+      <th>Imagem</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @idiomas.each do |idioma| %>
+      <tr>
+        <td><%= idioma.nome %></td>
+        <td><%= idioma.flgStatus %></td>
+        <td><%= idioma.inseridoPor %></td>
+        <td><%= idioma.dataDeInsercao %></td>
+        <td><%= image_tag idioma.avatar.url(:thumb) %></td>
+        <td><%= link_to 'Show', idioma %></td>
+        <td><%= link_to 'Edit', edit_idioma_path(idioma) %></td>
+        <td><%= link_to 'Destroy', idioma, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Idioma', new_idioma_path %>

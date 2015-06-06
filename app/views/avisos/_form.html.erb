@@ -1,0 +1,25 @@
+<%= form_for(@aviso) do |f| %>
+  <% if @aviso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aviso.errors.count, "error") %> prohibited this aviso from being saved:</h2>
+
+      <ul>
+      <% @aviso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mensagem %><br>
+    <%= f.text_area :mensagem %>
+  </div>
+  <div class="field">
+    <%= f.label :flgStatus %><br>
+    <%= f.check_box :flgStatus %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

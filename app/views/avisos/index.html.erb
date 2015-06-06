@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Avisos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mensagem</th>
+      <th>Flgstatus</th>
+      <th>Inseridopor</th>
+      <th>Datadeinsercao</th>
+      <th>Atualizadopor</th>
+      <th>Datadeatualizacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @avisos.each do |aviso| %>
+      <tr>
+        <td><%= aviso.mensagem %></td>
+        <td><%= aviso.flgStatus %></td>
+        <td><%= aviso.inseridoPor %></td>
+        <td><%= aviso.dataDeInsercao %></td>
+        <td><%= aviso.atualizadoPor %></td>
+        <td><%= aviso.dataDeAtualizacao %></td>
+        <td><%= link_to 'Show', aviso %></td>
+        <td><%= link_to 'Edit', edit_aviso_path(aviso) %></td>
+        <td><%= link_to 'Destroy', aviso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aviso', new_aviso_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@idioma, :html => { :multipart => true }) do |f| %>
+  <% if @idioma.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@idioma.errors.count, "error") %> prohibited this idioma from being saved:</h2>
+
+      <ul>
+      <% @idioma.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Imagem %><br>
+     <%= f.file_field :avatar %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.check_box :flgStatus %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :inseridoPor %><br>
+    <%= f.text_field :inseridoPor %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

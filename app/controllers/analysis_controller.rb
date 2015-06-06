@@ -14,10 +14,10 @@ class AnalysisController < ApplicationController
 			save(arquivo)#função para salvar em disco
 			texto = []
 			IO.foreach( $root + arquivo.original_filename){|x| texto << x}
-			outro = [] # GABIARRA!
-			array.each{|f| outro << f.gsub(/\\n/,"").delete("\"").delete(",").delete(".").delete("!").delete("[").delete("]") } #retira a ma formatacao do texto
-			outro = outro.join(" ")
-			palavraValor = outro.split.inject(Hash.new(0)) { |h,v| h[v] += 1; h } #Conta as palavras e coloca em um hash
+			text_format = [] # GAMBIARRA!
+			texto.each{|f| text_format << f.gsub(/\\n/,"").delete("\"").delete(",").delete(".").delete("!").delete("[").delete("]") } #retira a ma formatacao do texto
+			text_format = text_format.join(" ")
+			palavraValor = text_format.split.inject(Hash.new(0)) { |h,v| h[v] += 1; h } #Conta as palavras e coloca em um hash
 
 			#Ordena pela maior quantidade
 			palavraValor = palavraValor.sort_by{|word, vzs| vzs}

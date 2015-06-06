@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :avisos
+  resources :idiomas
   # get 'analysis/index'
 
   root 'analysis#index'

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @idioma.nome %>
+</p>
+
+<p>
+  <strong>Flgstatus:</strong>
+  <%= @idioma.flgStatus %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @idioma.inseridoPor %>
+</p>
+
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @idioma.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Data de insercao:</strong>
+  <%= @idioma.dataDeAtualizacao %>
+</p>
+
+<p>
+	<%= image_tag @idioma.avatar.url(:medium) %>
+</p>
+
+<%= link_to 'Edit', edit_idioma_path(@idioma) %> |
+<%= link_to 'Back', idiomas_path %>
