@@ -14,8 +14,8 @@
   <tbody>
     <% @idioma_avisos.each do |idioma_aviso| %>
       <tr>
-        <td><%= link_to idioma_aviso.idioma %></td>
-        <td><%= link_to idioma_aviso.aviso %></td>
+        <td><%= idioma_aviso.idioma.nome %></td>
+        <td><%= idioma_aviso.aviso.mensagem %></td>
         <td><%= link_to 'Show', idioma_aviso %></td>
         <td><%= link_to 'Edit', edit_idioma_aviso_path(idioma_aviso) %></td>
         <td><%= link_to 'Destroy', idioma_aviso, method: :delete, data: { confirm: 'Are you sure?' } %></td>

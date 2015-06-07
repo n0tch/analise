@@ -1,0 +1,34 @@
+<%= form_for(@contato_email) do |f| %>
+  <% if @contato_email.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contato_email.errors.count, "error") %> prohibited this contato_email from being saved:</h2>
+
+      <ul>
+      <% @contato_email.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :flgStatus %><br>
+    <%= f.check_box :flgStatus %>
+  </div>
+  <div>
+    <%= f.label :ap_tipo_contato_id %><br>
+    <% options = options_from_collection_for_select(@ap_tipo_contato, 'id', 'nome') %>
+    <%= f.select :ap_tipo_contato_id,  options %>  
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

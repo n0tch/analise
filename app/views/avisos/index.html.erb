@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
+      <th>Titulo</th>
       <th>Mensagem</th>
-      <th>Flgstatus</th>
+      <th>Status</th>
       <th>Inseridopor</th>
-      <th>Datadeinsercao</th>
       <th>Atualizadopor</th>
       <th>Datadeatualizacao</th>
       <th colspan="3"></th>
@@ -18,10 +18,10 @@
   <tbody>
     <% @avisos.each do |aviso| %>
       <tr>
+        <td><%= aviso.titulo %></td>
         <td><%= aviso.mensagem %></td>
         <td><%= aviso.flgStatus %></td>
         <td><%= aviso.inseridoPor %></td>
-        <td><%= aviso.dataDeInsercao %></td>
         <td><%= aviso.atualizadoPor %></td>
         <td><%= aviso.dataDeAtualizacao %></td>
         <td><%= link_to 'Show', aviso %></td>

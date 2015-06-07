@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :classe_gramaticals
+  resources :contato_configuracaos
+  resources :contato_emails
+  resources :ap_tipo_contatos
   resources :idioma_avisos
   resources :avisos
   resources :idiomas

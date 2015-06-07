@@ -1,0 +1,37 @@
+<%= form_for(@contato_configuracao) do |f| %>
+  <% if @contato_configuracao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contato_configuracao.errors.count, "error") %> prohibited this contato_configuracao from being saved:</h2>
+
+      <ul>
+      <% @contato_configuracao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :smtp %><br>
+    <%= f.text_field :smtp %>
+  </div>
+  <div class="field">
+    <%= f.label :porta %><br>
+    <%= f.number_field :porta %>
+  </div>
+  <div class="field">
+    <%= f.label :host %><br>
+    <%= f.text_field :host %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :senha %><br>
+    <%= f.text_field :senha %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

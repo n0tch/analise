@@ -1,0 +1,35 @@
+<%= form_for(@classe_gramatical) do |f| %>
+  <% if @classe_gramatical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@classe_gramatical.errors.count, "error") %> prohibited this classe_gramatical from being saved:</h2>
+
+      <ul>
+      <% @classe_gramatical.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :sigla %><br>
+    <%= f.text_field :sigla %>
+  </div>
+  <div class="field">
+    <%= f.label :flgStatus %><br>
+    <%= f.check_box :flgStatus %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :idioma_id %><br>
+    <% options = options_from_collection_for_select(@idiomas, 'id', 'nome') %>
+    <%= f.select :idioma_id,  options %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

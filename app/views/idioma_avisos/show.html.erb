@@ -2,12 +2,17 @@
 
 <p>
   <strong>Idioma:</strong>
-  <%= @idioma_aviso.idioma %>
+  <%= @idioma_aviso.idioma.nome %>
 </p>
 
 <p>
-  <strong>Aviso:</strong>
-  <%= @idioma_aviso.aviso %>
+  <strong>Titulo:</strong>
+  <%= @idioma_aviso.aviso.titulo %>
+</p>
+
+<p>
+  <strong>Mensagem:</strong>
+  <%= @idioma_aviso.aviso.mensagem %>
 </p>
 
 <%= link_to 'Edit', edit_idioma_aviso_path(@idioma_aviso) %> |

@@ -11,14 +11,19 @@
     </div>
   <% end %>
 
+  
   <div class="field">
     <%= f.label :idioma_id %><br>
-    <%= f.text_field :idioma_id %>
+    <% options = options_from_collection_for_select(@listIdioma, 'id', 'nome') %>
+    <%= f.select :idioma_id,  options %>
   </div>
+
   <div class="field">
     <%= f.label :aviso_id %><br>
-    <%= f.text_field :aviso_id %>
+    <% options = options_from_collection_for_select(@listAviso, 'id', 'titulo') %>
+    <%= f.select :aviso_id,  options %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

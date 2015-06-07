@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Smtp:</strong>
+  <%= @contato_configuracao.smtp %>
+</p>
+
+<p>
+  <strong>Porta:</strong>
+  <%= @contato_configuracao.porta %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @contato_configuracao.host %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @contato_configuracao.email %>
+</p>
+
+<p>
+  <strong>Senha:</strong>
+  <%= @contato_configuracao.senha %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @contato_configuracao.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @contato_configuracao.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @contato_configuracao.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @contato_configuracao.dataDeAtualizacao %>
+</p>
+
+<%= link_to 'Edit', edit_contato_configuracao_path(@contato_configuracao) %> |
+<%= link_to 'Back', contato_configuracaos_path %>

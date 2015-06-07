@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606231636) do
+ActiveRecord::Schema.define(version: 20150607173410) do
+
+  create_table "ap_tipo_contatos", force: :cascade do |t|
+    t.string   "nome",              null: false
+    t.boolean  "flgStatus",         null: false
+    t.string   "inseridoPor",       null: false
+    t.datetime "dataDeInsercao",    null: false
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "avisos", force: :cascade do |t|
     t.text     "mensagem",          null: false
@@ -22,7 +33,52 @@ ActiveRecord::Schema.define(version: 20150606231636) do
     t.datetime "dataDeAtualizacao"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "titulo"
   end
+
+  create_table "classe_gramaticals", force: :cascade do |t|
+    t.string   "nome",                         null: false
+    t.string   "sigla",             limit: 10, null: false
+    t.boolean  "flgStatus",                    null: false
+    t.string   "inseridoPor",                  null: false
+    t.datetime "dataDeInsercao",               null: false
+    t.string   "atualizadoPor",                null: false
+    t.datetime "dataDeAtualizacao"
+    t.integer  "idioma_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "classe_gramaticals", ["idioma_id"], name: "index_classe_gramaticals_on_idioma_id"
+
+  create_table "contato_configuracaos", force: :cascade do |t|
+    t.string   "smtp",              null: false
+    t.integer  "porta"
+    t.string   "host"
+    t.string   "email"
+    t.string   "senha"
+    t.string   "inseridoPor"
+    t.datetime "dataDeInsercao"
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "contato_emails", force: :cascade do |t|
+    t.string   "nome",               null: false
+    t.string   "email",              null: false
+    t.boolean  "flgStatus",          null: false
+    t.string   "inseridoPor",        null: false
+    t.datetime "dataDeInsercao",     null: false
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "ap_tipo_contato_id"
+  end
+
+  add_index "contato_emails", ["ap_tipo_contato_id"], name: "index_contato_emails_on_ap_tipo_contato_id"
 
   create_table "idioma_avisos", force: :cascade do |t|
     t.integer  "idioma_id"

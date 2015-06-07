@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @ap_tipo_contato.nome %>
+</p>
+
+<p>
+  <strong>Flgstatus:</strong>
+  <%= @ap_tipo_contato.flgStatus %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @ap_tipo_contato.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @ap_tipo_contato.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @ap_tipo_contato.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @ap_tipo_contato.dataDeAtualizacao %>
+</p>
+
+<%= link_to 'Edit', edit_ap_tipo_contato_path(@ap_tipo_contato) %> |
+<%= link_to 'Back', ap_tipo_contatos_path %>

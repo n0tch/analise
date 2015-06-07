@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Classe Gramaticals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sigla</th>
+      <th>Flgstatus</th>
+      <th>Inseridopor</th>
+      <th>Datadeinsercao</th>
+      <th>Atualizadopor</th>
+      <th>Datadeatualizacao</th>
+      <th>Idioma</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classe_gramaticals.each do |classe_gramatical| %>
+      <tr>
+        <td><%= classe_gramatical.nome %></td>
+        <td><%= classe_gramatical.sigla %></td>
+        <td><%= classe_gramatical.flgStatus %></td>
+        <td><%= classe_gramatical.inseridoPor %></td>
+        <td><%= classe_gramatical.dataDeInsercao %></td>
+        <td><%= classe_gramatical.atualizadoPor %></td>
+        <td><%= classe_gramatical.dataDeAtualizacao %></td>
+        <td><%= classe_gramatical.idioma.nome %></td>
+        <td><%= link_to 'Show', classe_gramatical %></td>
+        <td><%= link_to 'Edit', edit_classe_gramatical_path(classe_gramatical) %></td>
+        <td><%= link_to 'Destroy', classe_gramatical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Classe gramatical', new_classe_gramatical_path %>

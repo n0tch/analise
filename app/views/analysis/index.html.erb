@@ -10,7 +10,12 @@
   <%= submit_tag :enviar %>
 <% end %>
 
-
-<%= link_to 'Idioma', idiomas_path%>
-<%= link_to 'Avisos', avisos_path%>
-<%= link_to 'Idioma Aviso', idioma_avisos_path%>
+<ul>
+	<li><%= link_to 'Idioma', idiomas_path %></li>
+	<li><%= link_to 'Avisos', avisos_path %></li>
+	<li><%= link_to 'Idioma Aviso', idioma_avisos_path %></li>
+	<li><%= link_to 'Contato Tipo', ap_tipo_contatos_path %></li>
+	<li><%= link_to 'Contato Email', contato_emails_path %></li>
+	<li><%= link_to 'Contato Configuração', contato_configuracaos_path %></li>
+	<li><%= link_to 'Classe Gramatical', classe_gramaticals_path %></li>
+</ul>

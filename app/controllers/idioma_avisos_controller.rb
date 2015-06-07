@@ -15,16 +15,23 @@ class IdiomaAvisosController < ApplicationController
   # GET /idioma_avisos/new
   def new
     @idioma_aviso = IdiomaAviso.new
+    @listIdioma = Idioma.all
+    @listAviso = Aviso.all
   end
 
   # GET /idioma_avisos/1/edit
   def edit
+    @listIdioma = Idioma.all
+    @listAviso = Aviso.all
   end
 
   # POST /idioma_avisos
   # POST /idioma_avisos.json
   def create
     @idioma_aviso = IdiomaAviso.new(idioma_aviso_params)
+
+    @idioma_aviso.idioma = Idioma.find(@idioma_aviso.idioma_id)
+    @idioma_aviso.aviso = Aviso.find(@idioma_aviso.aviso_id)
 
     respond_to do |format|
       if @idioma_aviso.save

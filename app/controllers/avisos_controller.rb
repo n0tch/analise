@@ -79,6 +79,6 @@ class AvisosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def aviso_params
-      params.require(:aviso).permit(:mensagem, :flgStatus, :inseridoPor, :dataDeInsercao, :atualizadoPor, :dataDeAtualizacao)
+      params.require(:aviso).permit(:titulo, :mensagem, :flgStatus, :inseridoPor, :dataDeInsercao, :atualizadoPor, :dataDeAtualizacao)
     end
 end

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Contato Emails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Flgstatus</th>
+      <th>Inseridopor</th>
+      <th>Datadeinsercao</th>
+      <th>Atualizadopor</th>
+      <th>Datadeatualizacao</th>
+      <th>Ap tipo contato</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contato_emails.each do |contato_email| %>
+      <tr>
+        <td><%= contato_email.nome %></td>
+        <td><%= contato_email.email %></td>
+        <td><%= contato_email.flgStatus %></td>
+        <td><%= contato_email.inseridoPor %></td>
+        <td><%= contato_email.dataDeInsercao %></td>
+        <td><%= contato_email.atualizadoPor %></td>
+        <td><%= contato_email.dataDeAtualizacao %></td>
+        <td><%= contato_email.ap_tipo_contato.nome %></td>
+        <td><%= link_to 'Show', contato_email %></td>
+        <td><%= link_to 'Edit', edit_contato_email_path(contato_email) %></td>
+        <td><%= link_to 'Destroy', contato_email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contato email', new_contato_email_path %>

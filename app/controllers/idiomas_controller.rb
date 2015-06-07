@@ -25,9 +25,12 @@ class IdiomasController < ApplicationController
   # POST /idiomas.json
   def create
     @idioma = Idioma.new(idioma_params)
+
     @idioma.dataDeInsercao = Time.now
+    @idioma.inseridoPor = "Gustavo" #Utilizar gem devise
     @idioma.atualizadoPor = "Gustavo" #Utilizar gem devise
     @idioma.dataDeAtualizacao = Time.now
+    
     respond_to do |format|
       if @idioma.save
         format.html { redirect_to @idioma, notice: 'Idioma was successfully created.' }

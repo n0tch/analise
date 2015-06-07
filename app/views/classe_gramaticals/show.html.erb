@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @classe_gramatical.nome %>
+</p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @classe_gramatical.sigla %>
+</p>
+
+<p>
+  <strong>Flgstatus:</strong>
+  <%= @classe_gramatical.flgStatus %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @classe_gramatical.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @classe_gramatical.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @classe_gramatical.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @classe_gramatical.dataDeAtualizacao %>
+</p>
+
+<p>
+  <strong>Idioma:</strong>
+  <%= @classe_gramatical.idioma.nome %>
+</p>
+
+<%= link_to 'Edit', edit_classe_gramatical_path(@classe_gramatical) %> |
+<%= link_to 'Back', classe_gramaticals_path %>

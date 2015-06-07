@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @contato_email.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @contato_email.email %>
+</p>
+
+<p>
+  <strong>Flgstatus:</strong>
+  <%= @contato_email.flgStatus %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @contato_email.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @contato_email.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @contato_email.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @contato_email.dataDeAtualizacao %>
+</p>
+
+<p>
+  <strong>Ap tipo contato:</strong>
+  <%= @contato_email.ap_tipo_contato.nome %>
+</p>
+
+<%= link_to 'Edit', edit_contato_email_path(@contato_email) %> |
+<%= link_to 'Back', contato_emails_path %>

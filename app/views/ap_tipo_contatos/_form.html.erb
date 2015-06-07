@@ -1,0 +1,26 @@
+<%= form_for(@ap_tipo_contato) do |f| %>
+  <% if @ap_tipo_contato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ap_tipo_contato.errors.count, "error") %> prohibited this ap_tipo_contato from being saved:</h2>
+
+      <ul>
+      <% @ap_tipo_contato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :flgStatus %><br>
+    <%= f.check_box :flgStatus %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

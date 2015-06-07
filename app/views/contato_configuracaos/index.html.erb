@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Contato Configuracaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Smtp</th>
+      <th>Porta</th>
+      <th>Host</th>
+      <th>Email</th>
+      <th>Senha</th>
+      <th>Inseridopor</th>
+      <th>Datadeinsercao</th>
+      <th>Atualizadopor</th>
+      <th>Datadeatualizacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contato_configuracaos.each do |contato_configuracao| %>
+      <tr>
+        <td><%= contato_configuracao.smtp %></td>
+        <td><%= contato_configuracao.porta %></td>
+        <td><%= contato_configuracao.host %></td>
+        <td><%= contato_configuracao.email %></td>
+        <td><%= contato_configuracao.senha %></td>
+        <td><%= contato_configuracao.inseridoPor %></td>
+        <td><%= contato_configuracao.dataDeInsercao %></td>
+        <td><%= contato_configuracao.atualizadoPor %></td>
+        <td><%= contato_configuracao.dataDeAtualizacao %></td>
+        <td><%= link_to 'Show', contato_configuracao %></td>
+        <td><%= link_to 'Edit', edit_contato_configuracao_path(contato_configuracao) %></td>
+        <td><%= link_to 'Destroy', contato_configuracao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contato configuracao', new_contato_configuracao_path %>
