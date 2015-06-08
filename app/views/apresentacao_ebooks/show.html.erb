@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Conteudo:</strong>
+  <%= @apresentacao_ebook.conteudo %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @apresentacao_ebook.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @apresentacao_ebook.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @apresentacao_ebook.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @apresentacao_ebook.dataDeAtualizacao %>
+</p>
+
+<%= link_to 'Edit', edit_apresentacao_ebook_path(@apresentacao_ebook) %> |
+<%= link_to 'Back', apresentacao_ebooks_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instituicao_id: 
+  curso_id: 
+  inseridoPor: MyString
+  dataDeInsercao: 2015-06-07 20:11:49
+  atualizadoPor: MyString
+  dataDeAtualizacao: 2015-06-07 20:11:49
+
+two:
+  instituicao_id: 
+  curso_id: 
+  inseridoPor: MyString
+  dataDeInsercao: 2015-06-07 20:11:49
+  atualizadoPor: MyString
+  dataDeAtualizacao: 2015-06-07 20:11:49

@@ -1,0 +1,43 @@
+<%= form_for(@instituicao_responsavel) do |f| %>
+  <% if @instituicao_responsavel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instituicao_responsavel.errors.count, "error") %> prohibited this instituicao_responsavel from being saved:</h2>
+
+      <ul>
+      <% @instituicao_responsavel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div>
+    <% f.label :instituicao_id %>
+    <% options = options_from_collection_for_select(@instituicaos, 'id', 'nome')%>
+    <%= f.select :instituicao_id, options %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :inseridoPor %><br>
+    <%= f.text_field :inseridoPor %>
+  </div>
+  <div class="field">
+    <%= f.label :dataDeInsercao %><br>
+    <%= f.text_field :dataDeInsercao %>
+  </div>
+  <div class="field">
+    <%= f.label :atualizadoPor %><br>
+    <%= f.text_field :atualizadoPor %>
+  </div>
+  <div class="field">
+    <%= f.label :dataDeAtualizacao %><br>
+    <%= f.datetime_select :dataDeAtualizacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

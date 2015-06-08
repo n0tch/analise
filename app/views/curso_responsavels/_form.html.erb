@@ -1,0 +1,37 @@
+<%= form_for(@curso_responsavel) do |f| %>
+  <% if @curso_responsavel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@curso_responsavel.errors.count, "error") %> prohibited this curso_responsavel from being saved:</h2>
+
+      <ul>
+      <% @curso_responsavel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :idioma %><br>
+    <%= f.text_field :idioma_id %>
+  </div>
+  <div class="field">
+    <%= f.label :inseridoPor %><br>
+    <%= f.text_field :inseridoPor %>
+  </div>
+  <div class="field">
+    <%= f.label :dataDeInsercao %><br>
+    <%= f.datetime_select :dataDeInsercao %>
+  </div>
+  <div class="field">
+    <%= f.label :atualizadoPor %><br>
+    <%= f.text_field :atualizadoPor %>
+  </div>
+  <div class="field">
+    <%= f.label :dataDeAtualizacao %><br>
+    <%= f.datetime_select :dataDeAtualizacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

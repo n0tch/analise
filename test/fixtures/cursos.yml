@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  flgStatus: false
+  inseridoPor: MyString
+  dataDeAtualizacao: 2015-06-07 19:52:08
+  atualizadoPor: MyString
+  dataDeAtualizacao: 2015-06-07 19:52:08
+  idioma_id: 
+
+two:
+  nome: MyString
+  flgStatus: false
+  inseridoPor: MyString
+  dataDeAtualizacao: 2015-06-07 19:52:08
+  atualizadoPor: MyString
+  dataDeAtualizacao: 2015-06-07 19:52:08
+  idioma_id: 

@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :apresentacao_ebooks
+  resources :areas
+  resources :instituicao_responsavels
+  resources :curso_responsavels
+  resources :instituicao_cursos
+  resources :instituicaos
+  resources :cursos
   resources :classe_gramaticals
   resources :contato_configuracaos
   resources :contato_emails

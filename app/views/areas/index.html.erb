@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Areas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Curso</th>
+      <th>Nome</th>
+      <th>Flgstatus</th>
+      <th>Inseridopor</th>
+      <th>Datadeinsercao</th>
+      <th>Atualizadopor</th>
+      <th>Datadeatualizacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @areas.each do |area| %>
+      <tr>
+        <td><%= area.curso %></td>
+        <td><%= area.nome %></td>
+        <td><%= area.flgStatus %></td>
+        <td><%= area.inseridoPor %></td>
+        <td><%= area.dataDeInsercao %></td>
+        <td><%= area.atualizadoPor %></td>
+        <td><%= area.dataDeAtualizacao %></td>
+        <td><%= link_to 'Show', area %></td>
+        <td><%= link_to 'Edit', edit_area_path(area) %></td>
+        <td><%= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Area', new_area_path %>

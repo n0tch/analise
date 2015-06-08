@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607173410) do
+ActiveRecord::Schema.define(version: 20150608231207) do
 
   create_table "ap_tipo_contatos", force: :cascade do |t|
     t.string   "nome",              null: false
@@ -23,6 +23,30 @@ ActiveRecord::Schema.define(version: 20150607173410) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
+
+  create_table "apresentacao_ebooks", force: :cascade do |t|
+    t.string   "conteudo",          null: false
+    t.string   "inseridoPor",       null: false
+    t.datetime "dataDeInsercao",    null: false
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "areas", force: :cascade do |t|
+    t.integer  "curso_id"
+    t.string   "nome",              null: false
+    t.boolean  "flgStatus",         null: false
+    t.string   "inseridoPor",       null: false
+    t.datetime "dataDeInsercao",    null: false
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "areas", ["curso_id"], name: "index_areas_on_curso_id"
 
   create_table "avisos", force: :cascade do |t|
     t.text     "mensagem",          null: false
@@ -80,6 +104,32 @@ ActiveRecord::Schema.define(version: 20150607173410) do
 
   add_index "contato_emails", ["ap_tipo_contato_id"], name: "index_contato_emails_on_ap_tipo_contato_id"
 
+  create_table "curso_responsavels", force: :cascade do |t|
+    t.integer  "idioma_id"
+    t.string   "inseridoPor",       null: false
+    t.datetime "dataDeInsercao",    null: false
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "curso_responsavels", ["idioma_id"], name: "index_curso_responsavels_on_idioma_id"
+
+  create_table "cursos", force: :cascade do |t|
+    t.string   "nome",              null: false
+    t.boolean  "flgStatus",         null: false
+    t.string   "inseridoPor",       null: false
+    t.datetime "dataDeAtualizacao"
+    t.string   "atualizadoPor"
+    t.integer  "idioma_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.datetime "dataDeInsercao"
+  end
+
+  add_index "cursos", ["idioma_id"], name: "index_cursos_on_idioma_id"
+
   create_table "idioma_avisos", force: :cascade do |t|
     t.integer  "idioma_id"
     t.integer  "aviso_id"
@@ -103,6 +153,49 @@ ActiveRecord::Schema.define(version: 20150607173410) do
     t.datetime "avatar_updated_at"
     t.string   "atualizadoPor"
     t.datetime "dataDeAtualizacao"
+  end
+
+  create_table "instituicao_cursos", force: :cascade do |t|
+    t.integer  "instituicao_id"
+    t.integer  "curso_id"
+    t.string   "inseridoPor"
+    t.datetime "dataDeInsercao"
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "instituicao_cursos", ["curso_id"], name: "index_instituicao_cursos_on_curso_id"
+  add_index "instituicao_cursos", ["instituicao_id"], name: "index_instituicao_cursos_on_instituicao_id"
+
+  create_table "instituicao_responsavels", force: :cascade do |t|
+    t.integer  "instituicao_id"
+    t.string   "nome",              null: false
+    t.string   "inseridoPor",       null: false
+    t.datetime "dataDeInsercao",    null: false
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "instituicao_responsavels", ["instituicao_id"], name: "index_instituicao_responsavels_on_instituicao_id"
+
+  create_table "instituicaos", force: :cascade do |t|
+    t.string   "nome",              null: false
+    t.string   "site",              null: false
+    t.boolean  "flgStatus",         null: false
+    t.string   "inseridoPor",       null: false
+    t.datetime "dataDeInsercao",    null: false
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
 end

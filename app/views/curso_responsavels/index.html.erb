@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Curso Responsavels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idioma</th>
+      <th>Inseridopor</th>
+      <th>Datadeinsercao</th>
+      <th>Atualizadopor</th>
+      <th>Datadeatualizacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @curso_responsavels.each do |curso_responsavel| %>
+      <tr>
+        <td><%= curso_responsavel.idioma %></td>
+        <td><%= curso_responsavel.inseridoPor %></td>
+        <td><%= curso_responsavel.dataDeInsercao %></td>
+        <td><%= curso_responsavel.atualizadoPor %></td>
+        <td><%= curso_responsavel.dataDeAtualizacao %></td>
+        <td><%= link_to 'Show', curso_responsavel %></td>
+        <td><%= link_to 'Edit', edit_curso_responsavel_path(curso_responsavel) %></td>
+        <td><%= link_to 'Destroy', curso_responsavel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Curso responsavel', new_curso_responsavel_path %>

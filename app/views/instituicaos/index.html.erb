@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Instituicaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Site</th>
+      <th>Flgstatus</th>
+      <th>Imagem</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instituicaos.each do |instituicao| %>
+      <tr>
+        <td><%= instituicao.nome %></td>
+        <td><%= link_to instituicao.site, instituicao.site, target: :_blank %></td>
+        <td><%= instituicao.flgStatus %></td>
+        <td><%= image_tag instituicao.logo.url(:thumb) %></td>
+        <td><%= link_to 'Show', instituicao %></td>
+        <td><%= link_to 'Edit', edit_instituicao_path(instituicao) %></td>
+        <td><%= link_to 'Destroy', instituicao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instituicao', new_instituicao_path %>

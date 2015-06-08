@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idioma:</strong>
+  <%= @curso_responsavel.idioma %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @curso_responsavel.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @curso_responsavel.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @curso_responsavel.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @curso_responsavel.dataDeAtualizacao %>
+</p>
+
+<%= link_to 'Edit', edit_curso_responsavel_path(@curso_responsavel) %> |
+<%= link_to 'Back', curso_responsavels_path %>

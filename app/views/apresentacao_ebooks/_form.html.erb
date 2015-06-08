@@ -1,0 +1,37 @@
+<%= form_for(@apresentacao_ebook) do |f| %>
+  <% if @apresentacao_ebook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apresentacao_ebook.errors.count, "error") %> prohibited this apresentacao_ebook from being saved:</h2>
+
+      <ul>
+      <% @apresentacao_ebook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :conteudo %><br>
+    <%= f.text_field :conteudo %>
+  </div>
+  <div class="field">
+    <%= f.label :inseridoPor %><br>
+    <%= f.text_field :inseridoPor %>
+  </div>
+  <div class="field">
+    <%= f.label :dataDeInsercao %><br>
+    <%= f.datetime_select :dataDeInsercao %>
+  </div>
+  <div class="field">
+    <%= f.label :atualizadoPor %><br>
+    <%= f.text_field :atualizadoPor %>
+  </div>
+  <div class="field">
+    <%= f.label :dataDeAtualizacao %><br>
+    <%= f.datetime_select :dataDeAtualizacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

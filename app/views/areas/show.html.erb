@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @area.curso %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @area.nome %>
+</p>
+
+<p>
+  <strong>Flgstatus:</strong>
+  <%= @area.flgStatus %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @area.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @area.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @area.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @area.dataDeAtualizacao %>
+</p>
+
+<%= link_to 'Edit', edit_area_path(@area) %> |
+<%= link_to 'Back', areas_path %>

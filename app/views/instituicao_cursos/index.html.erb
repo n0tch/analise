@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Instituicao Cursos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instituicao</th>
+      <th>Curso</th>
+      <th>Inseridopor</th>
+      <th>Datadeinsercao</th>
+      <th>Atualizadopor</th>
+      <th>Datadeatualizacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instituicao_cursos.each do |instituicao_curso| %>
+      <tr>
+        <td><%= instituicao_curso.instituicao.nome %></td>
+        <td><%= instituicao_curso.curso.nome %></td>
+        <td><%= instituicao_curso.inseridoPor %></td>
+        <td><%= instituicao_curso.dataDeInsercao %></td>
+        <td><%= instituicao_curso.atualizadoPor %></td>
+        <td><%= instituicao_curso.dataDeAtualizacao %></td>
+        <td><%= link_to 'Show', instituicao_curso %></td>
+        <td><%= link_to 'Edit', edit_instituicao_curso_path(instituicao_curso) %></td>
+        <td><%= link_to 'Destroy', instituicao_curso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instituicao curso', new_instituicao_curso_path %>

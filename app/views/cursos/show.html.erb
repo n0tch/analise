@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @curso.nome %>
+</p>
+
+<p>
+  <strong>Flgstatus:</strong>
+  <%= @curso.flgStatus %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @curso.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @curso.dataDeAtualizacao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @curso.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @curso.dataDeAtualizacao %>
+</p>
+
+<p>
+  <strong>Idioma:</strong>
+  <%= @curso.idioma.nome %>
+</p>
+
+<%= link_to 'Edit', edit_curso_path(@curso) %> |
+<%= link_to 'Back', cursos_path %>

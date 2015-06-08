@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Instituicao Responsavels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instituicao</th>
+      <th>Nome</th>
+      <th>Inseridopor</th>
+      <th>Datadeinsercao</th>
+      <th>Atualizadopor</th>
+      <th>Datadeatualizacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instituicao_responsavels.each do |instituicao_responsavel| %>
+      <tr>
+        <td><%= instituicao_responsavel.instituicao %></td>
+        <td><%= instituicao_responsavel.nome %></td>
+        <td><%= instituicao_responsavel.inseridoPor %></td>
+        <td><%= instituicao_responsavel.dataDeInsercao %></td>
+        <td><%= instituicao_responsavel.atualizadoPor %></td>
+        <td><%= instituicao_responsavel.dataDeAtualizacao %></td>
+        <td><%= link_to 'Show', instituicao_responsavel %></td>
+        <td><%= link_to 'Edit', edit_instituicao_responsavel_path(instituicao_responsavel) %></td>
+        <td><%= link_to 'Destroy', instituicao_responsavel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instituicao responsavel', new_instituicao_responsavel_path %>

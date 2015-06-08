@@ -1,0 +1,48 @@
+<%= form_for(@instituicao, :html => { :multipart => true }) do |f| %>
+  <% if @instituicao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instituicao.errors.count, "error") %> prohibited this instituicao from being saved:</h2>
+
+      <ul>
+      <% @instituicao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :site %><br>
+    <%= f.text_field :site %>
+  </div>
+  <div class="field">
+    <%= f.label :flgStatus %><br>
+    <%= f.check_box :flgStatus %>
+  </div>
+  <div class="field">
+    <%= f.label :inseridoPor %><br>
+    <%= f.text_field :inseridoPor %>
+  </div>
+  <div class="field">
+    <%= f.label :dataDeInsercao %><br>
+    <%= f.datetime_select :dataDeInsercao %>
+  </div>
+  <div class="field">
+    <%= f.label :atualizadoPor %><br>
+    <%= f.text_field :atualizadoPor %>
+  </div>
+  <div class="field">
+    <%= f.label :dataDeAtualizacao %><br>
+    <%= f.datetime_select :dataDeAtualizacao %>
+  </div>
+  <div class="field">
+      <%= f.file_field :logo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

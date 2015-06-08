@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Instituicao:</strong>
+  <%= @instituicao_responsavel.instituicao %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @instituicao_responsavel.nome %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @instituicao_responsavel.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @instituicao_responsavel.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @instituicao_responsavel.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @instituicao_responsavel.dataDeAtualizacao %>
+</p>
+
+<%= link_to 'Edit', edit_instituicao_responsavel_path(@instituicao_responsavel) %> |
+<%= link_to 'Back', instituicao_responsavels_path %>

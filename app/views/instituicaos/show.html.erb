@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @instituicao.nome %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @instituicao.site %>
+</p>
+
+<p>
+  <strong>Flgstatus:</strong>
+  <%= @instituicao.flgStatus %>
+</p>
+
+<p>
+  <strong>Inseridopor:</strong>
+  <%= @instituicao.inseridoPor %>
+</p>
+
+<p>
+  <strong>Datadeinsercao:</strong>
+  <%= @instituicao.dataDeInsercao %>
+</p>
+
+<p>
+  <strong>Atualizadopor:</strong>
+  <%= @instituicao.atualizadoPor %>
+</p>
+
+<p>
+  <strong>Datadeatualizacao:</strong>
+  <%= @instituicao.dataDeAtualizacao %>
+</p>
+
+<p>  
+<%= image_tag @instituicao.logo.url(:medium) %>
+</p>
+
+<%= link_to 'Edit', edit_instituicao_path(@instituicao) %> |
+<%= link_to 'Back', instituicaos_path %>
