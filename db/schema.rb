@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608231207) do
+ActiveRecord::Schema.define(version: 20150608233242) do
 
   create_table "ap_tipo_contatos", force: :cascade do |t|
     t.string   "nome",              null: false
@@ -197,5 +197,32 @@ ActiveRecord::Schema.define(version: 20150608231207) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
   end
+
+  create_table "pes_fisicas", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "nome",                                null: false
+    t.string   "cpf",                                 null: false
+    t.text     "cnpq",                                null: false
+    t.text     "linkedin",                            null: false
+    t.text     "curriculo"
+    t.string   "inseridoPor",                         null: false
+    t.datetime "dataDeInsercao",                      null: false
+    t.string   "atualizadoPor"
+    t.datetime "dataDeAtualizacao"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pes_fisicas", ["email"], name: "index_pes_fisicas_on_email", unique: true
+  add_index "pes_fisicas", ["reset_password_token"], name: "index_pes_fisicas_on_reset_password_token", unique: true
 
 end

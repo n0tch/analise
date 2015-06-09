@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :pes_fisicas
   resources :apresentacao_ebooks
   resources :areas
   resources :instituicao_responsavels
